@@ -62,7 +62,7 @@ class WebpackSvgStore {
     });
 
     data.fileName = utils.hash(data.fileName, parser.state.current.buildTimestamp);
-    let replacement = expr.id.name + ' = { filename: ' + "__webpack_require__.p +" + '"' + data.fileName + '" }';
+    let replacement = expr.id.name + ' = { filename: "' + data.fileName + '" }';
     let dep = new ConstDependency(replacement, expr.range);
     dep.loc = expr.loc;
     parser.state.current.addDependency(dep);
