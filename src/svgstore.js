@@ -83,6 +83,8 @@ class WebpackSvgStore {
           const thisExpr = expr.declarations[0];
           if (thisExpr.id.name === "__svg__") {
             return this.createTaskContext(thisExpr, parser);
+          } else if (thisExpr.id.name === "__svgstore__") {
+            return this.createTaskContext(thisExpr, parser);
           }
         });
       });
